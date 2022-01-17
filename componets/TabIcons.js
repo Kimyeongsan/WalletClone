@@ -8,7 +8,6 @@ const TabIcons = ({ focused, icon, iconStyle, label, isTrade }) => {
     if (isTrade) {
         return (
             <View style={{ alignItems: 'center', justifyContent: 'center', width: 60, height: 60, borderRadius: 30, backgroundColor: COLORS.black }}>
-
                 <Image
                     source={icon}
                     resizeMode='contain'
