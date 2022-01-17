@@ -15,24 +15,25 @@ const Tabs = () => {
     return (
         <Tab.Navigator
             screenOptions={{
-                tabBarShowLabel:false,
-                style: {
+                tabBarShowLabel: false,
+                tabBarStyle: {
                     height: 140,
                     backgroundColor: COLORS.primary,
                     borderTopColor: "transparent",
                 }
-            }}
-        >
+            }}>
+
             <Tab.Screen
-                name="Home"s
+                name="Home"
                 component={Home}
                 options={{
-                    tabIcons: ({ focused }) => {
+                    tabBarIcon: ({ focused }) => {
                         return (
                             <TabIcons
                                 focused={focused}
-                                icon={icons.home} 
-                                tabBarShowLabel='Home'/>
+                                icon={icons.home}
+                                label='Home'
+                            />
                         )
                     }
                 }}
@@ -40,21 +41,67 @@ const Tabs = () => {
             <Tab.Screen
                 name="Portfolio"
                 component={Portfolio}
+                options={{
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <TabIcons
+                                focused={focused}
+                                icon={icons.briefcase}
+                                label='Potofolio'
+                            />
+                        )
+                    }
+                }}
             />
             <Tab.Screen
                 name="Trade"
                 component={Home}
+                options={{
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <TabIcons
+                                focused={focused}
+                                icon={icons.trade}
+                                label='Trade'
+                                isTrade={true}
+                            />
+                        )
+                    }
+                }}
             />
             <Tab.Screen
                 name="Market"
                 component={Market}
+                options={{
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <TabIcons
+                                focused={focused}
+                                icon={icons.market}
+                                label='Market'
+                            />
+                        )
+                    }
+                }}
             />
             <Tab.Screen
                 name="Profile"
                 component={Profile}
+                options={{
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <TabIcons
+                                focused={focused}
+                                icon={icons.profile}
+                                label='Profile'
+                            />
+                        )
+                    }
+                }}
             />
         </Tab.Navigator>
     )
 }
+
 
 export default Tabs;
