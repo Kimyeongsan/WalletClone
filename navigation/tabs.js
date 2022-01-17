@@ -1,5 +1,6 @@
 import React from "react";
 import {
+    View,
     TouchableOpacity,
 } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
@@ -21,7 +22,9 @@ const TabBarCustomButton = ({ children, onPress }) => {
                 alignItems: 'center'
             }}
             onPress={onPress}
-        > {children}
+        > 
+        <View>{children}</View>
+        
         </TouchableOpacity>
     )
 }
